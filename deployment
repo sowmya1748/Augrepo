@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy
+spec:
+  replicas: 2
+  selector:
+    matchlabels:
+      app: swiggy
+  template:
+    metadata:
+      labels:
+        app: swiggy
+    spec:
+      containers:
+        - name: cont1
+          image: shaikmustafa/dm
+          ports:
+            - containerPort: 80
+  
